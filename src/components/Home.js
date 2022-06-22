@@ -9,9 +9,6 @@ import { useHomeFetch } from "../hooks/useHomeFetch";
 const Home = () => {
   const { state, loading, error } = useHomeFetch();
   console.log(state);
-  console.log(
-    `${IMAGE_BASE_URL}${BACKDROP_SIZE}${state.results[0].backdrop_path}`
-  );
   return (
     <>
       {state.results[0] ? (
