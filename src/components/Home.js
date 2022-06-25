@@ -11,7 +11,7 @@ import SearchBar from "./SearchBar";
 import { useHomeFetch } from "../hooks/useHomeFetch";
 
 const Home = () => {
-  const { state, loading, error } = useHomeFetch();
+  const { state, loading, error, setSearchTerm } = useHomeFetch();
   console.log(state);
   return (
     <>
@@ -22,7 +22,7 @@ const Home = () => {
           text={state.results[0].overview}
         />
       ) : null}
-      <SearchBar />
+      <SearchBar setSearchTerm={setSearchTerm} />
       <Grid header="Popular Movies">
         {state.results.map((movie) => (
           <Thumb
